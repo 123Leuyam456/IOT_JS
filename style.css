@@ -1,0 +1,46 @@
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    margin :0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing : border-box;
+    font-family: 'Yusei Magic', sans-serif;
+}
+body{
+    background: #dfe9f5;
+}
+
+header{
+    text-align: center;
+    margin : 0 2vw;
+    background: #c6d0db;
+    border-bottom-left-radius:50px ;
+    border-bottom-right-radius:50px ;
+}
+header h1{
+    font-size: 5em;
+}
+header h2{
+    margin-top: 0.063em;
+    font-size: 2.5em;
+    padding-bottom: 0.625em;
+    font-weight:lighter;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:400px;
+    flex-direction: column;
+}
+
+
