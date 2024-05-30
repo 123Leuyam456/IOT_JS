@@ -1,0 +1,980 @@
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    margin :0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing : border-box;
+    font-family: 'Yusei Magic', sans-serif;
+}
+body{
+    background: #dfe9f5;
+}
+header{
+    text-align: center;
+    margin : 0 2vw;
+    background: #c6d0db;
+    border-bottom-left-radius:50px ;
+    border-bottom-right-radius:50px ;
+}
+header h1{
+    font-size: 5em;
+}
+header h2{
+    margin-top: 0.063em;
+    font-size: 2.5em;
+    padding-bottom: 0.625em;
+    font-weight:lighter;
+}
+
+
+/*Menu de navigation*/
+nav {
+    top: 15%;
+    position: fixed;
+    margin-top:60px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    width: 13em;
+    min-height: 35em;
+    left: 0;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(-100%);
+    background-color: #c6d0db; /* Changement de la couleur de fond */
+    border:solid 2px black;
+    border-left: none;
+    z-index: 1000; /* Assure que le menu soit au-dessus de tout le reste */
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+}
+nav.active {
+    transform: translate(0);
+    
+}
+nav a {
+    font-size: 20px;
+    display: block;
+    margin: 40px 0;
+    text-decoration: none;
+    color: #ffffff; /* Couleur du texte */
+    transition: color 0.3s ease; /* Transition fluide de la couleur du texte */
+
+}
+nav a:hover {
+    color: black; /* Changement de couleur au survol */
+}
+.nav-toggler {
+    position: fixed;
+    z-index: 1500;
+    top: 20px;
+    left: 30px;
+    height: 10em;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c6d0db;
+    border: solid 3px #dfe9f5;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease;
+}
+.nav-toggler:hover {
+    transform: scale(1.1); /* Légère agrandissement au survol */
+}
+.nav-toggler img{
+    height: 8em;
+    width: 8em;
+}
+nav ul li a img{
+    width: 3em;
+    height: 3em;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li {
+    margin-bottom: 15px;
+}
+nav ul li a span{
+    font-size: 1.875em;
+}
+
+
+
+/*footer*/
+footer{
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #c6d0db;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+}
+footer h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin:10px;
+    margin-bottom: 12px;
+}
+footer li span{
+    font-size: 16px;
+    font-weight: lighter;
+}
+footer li img{
+    width: 25px;
+    height:25px;
+    font-size: 20px;
+    margin-left: 15px;
+    text-align: center;
+}
+footer li{
+    text-align: start;
+    text-decoration: none;
+    list-style-type : none;
+}
+
+
+
+.titre{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/*Page profil, systeme de login*/
+.loginn{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginn div{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginput{
+
+    margin : 0 auto;
+}
+
+.loginn label{
+    text-align: center;
+}
+
+.loginn > div {
+    margin: 30px 20px
+}
+
+.loginabel {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.loginput {
+    height:30px;
+    width:60%;
+}
+.envoyer{
+    margin-bottom: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 100px;
+    width: 30vw;
+    margin: 0 auto;
+    border-color: black;
+    background-color: #c6d0db;
+}
+.envoyer:hover{
+    background-color: rgba(32, 31, 31, 0.245);
+}
+.message-error{
+    border: 1px solid rgba(212, 42, 0, 1);
+    color: rgb(212, 42, 0);
+    background-color :rgba(212, 42, 0, 0.4);
+    padding: 16px 32px;
+    margin-bottom:20px;
+    margin-top:20px ;
+    display:none;
+}
+.message-error.visible{
+    display:block;
+}
+.message-success{
+    border: 1px solid rgb(81,150,2);
+    color: rgb(81, 150, 2);
+    background-color: rgba(113, 212, 0, 0.4);
+    padding: 16px 32px;
+    margin-bottom: 20px;
+    margin-top:20px ;
+    display: none;
+}
+.message-success.visible{
+    display:block;
+}
+.success{
+    background-color: rgba(113, 212, 0, 0.4)
+}
+.defeat{
+    background-color: rgba(212, 11, 0, 0.4)
+}
+
+/*page-index*/
+.main-index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+/*carte cliquable*/
+.slide-container {
+    width: 100%;
+    height:85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-slider{
+    width: 100%;
+    height: 120vh;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.slides-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 30px;
+    position: relative;
+}
+
+.img_def{
+    position: relative;
+    width: 270px;
+    height: 380px;
+    transition: 0.5s;
+}
+
+.button {
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: 0.5s;
+}
+
+#slider-span1:target ~ .image-slider #img1,
+#slider-span1:target ~.image-slider #button-1{
+    width:400px;
+    height: 585px;
+    background-color: transparent;
+}
+#slider-span2:target ~ .image-slider #img2,
+#slider-span2:target ~.image-slider #button-2{
+    width:400px;
+    height: 585px;
+    background-color: transparent;
+}
+#slider-span3:target ~ .image-slider #img3,
+#slider-span3:target ~.image-slider #button-3{
+    width:400px;
+    height: 585px;
+    background-color: transparent;
+}
+#slider-span4:target ~ .image-slider #img4,
+#slider-span4:target ~.image-slider #button-4{
+    width:400px;
+    height: 585px;
+    background-color: transparent;
+}
+#slider-span1:target ~.image-slider{
+    left:2.5%;
+}
+#slider-span2:target ~.image-slider{
+    left:2.5%;
+}
+#slider-span3:target ~.image-slider{
+    left:-2.5%;
+}
+#slider-span4:target ~.image-slider{
+    left:-2.5%;
+}
+.lien-carte{
+    background-color:#c6d0db;
+    padding: 0.938em;
+    border-radius: 200px;
+    margin-top: 10px;
+}
+.lien .lien-carte p{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+.lien-carte:hover{
+    border-width: 100px;
+    border-color: black;
+    border-bottom: solid;
+    transition: border-width 0.2s ;
+    color: initial;
+    text-decoration: none;
+}
+.chevr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.chevr img{
+    height: 50px;
+    width: 50px;
+}
+
+/*texte index*/
+.h1-index{
+    text-align: center;
+    margin-top :20px;
+    font-size: 2.5em;
+    font-weight: bolder;
+    text-transform:uppercase;
+}
+#welcome{
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+#welcome_p{
+    margin-top: 3.125em;
+    margin-bottom: 90px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+/*Differentes cartes personnage*/
+.boutonn{
+    font-size: 24px;
+    margin: 20px auto;
+    border:3px solid white;
+    display: flex;
+    justify-content: center;
+    width: 9%;
+}
+
+.top-droit{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accordeon{
+    border: 3px solid rgba(250, 247, 247, 0.544);
+    width: 80%;
+    max-width: 600px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all ;
+}
+
+.album{
+    padding : 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 8px 16px rgba (146,146,146,0.3);
+}
+
+.album h2 {
+    width: 20px;
+    height: 20px;
+    margin-top:-15px
+}
+
+.album p{
+    font-weight :700;
+    font-size: 25px;
+}
+
+#contenu{
+    padding:0 20px;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: 0.8s;
+    text-transform: capitalize;
+}
+
+.album h2{
+    width : 20px;
+    height: 20px;
+    transition: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.accordeon.open .album h2{
+    transform-origin: center;
+    transform: rotate(360deg);
+}
+
+.accordeon.open #contenu{
+    padding: 30px 20px;
+    height:auto;
+    visibility: visible;
+}
+#titre-plan{
+    font-size: 90px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#titre-plan h3{
+    border:3px solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#img-plan {
+    width: 800px;
+    height: auto;
+}
+#img-plan img{
+    margin:5px auto;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+.boutonn{
+    font-size: 35px;
+    margin: 20px auto;
+    border:3px solid white;
+    display: flex;
+    justify-content: center;
+    width: 130%;
+    text-align: center;
+    color: black;
+    border-radius: 50px;
+}
+.boutonn:hover{
+    background-color: #c6d0db;
+    transition: all 0.5s ease;
+}
+.boutonTrade{
+    font-size: 35px;
+    margin: 20px auto;
+    border:3px solid white;
+    display: flex;
+    justify-content: center;
+    width: 120%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 50px;
+}
+.boutonTrade:hover{
+    background-color: #c6d0db;
+    transition: all 0.5s ease;
+}
+.head-img{
+    height: 70vh;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.top{
+    margin : auto auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+
+/*page html cards*/
+.expoCard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.expoCard img{
+    margin: 50px;
+    width: 411px;
+    height: 567px;
+}
+.expoCard img:hover{
+    box-shadow: 30px 30px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 70px;
+    cursor: pointer;
+
+}
+
+/* Page HTML exchange*/
+/*Systeme d'echange*/
+#carteChoix{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20vh;
+}
+
+#carteView{
+    margin-bottom: 10px;
+}
+
+.carteKeeper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5em auto;
+    margin-top: 2em;
+    width: 80%;
+    height: 300px;
+}
+
+.card {
+    width: 230px;
+    height: 305px;
+    border: 1px solid #ccc;
+    margin: 0 15vh;
+    cursor: pointer;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected {
+    border: 2px solid black;
+}
+
+#exchangeButton {
+    padding: 30px 50px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#exchangeButton:hover {
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+}
+.selecteur {
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.selecteur-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 150px;
+}
+
+
+.selecteur-content a {
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.selecteur-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.selecteur:hover .selecteur-content {
+    display: block;
+}
+#cardImage_01, #cardImage_02{
+    width: 225px;
+    height: 300px;
+}
+
+#main-trade{
+    margin-bottom: 20vh;
+}
+
+#selectPers {
+    font-size: 18px;
+    padding: 10px;
+    background-color: none;
+}
+
+#persDisplay {
+    font-size: 48px;
+    margin-top: 30px;
+    text-align: center;
+}
+#tradeText{
+    text-align: center;
+}
+
+/*contenu*/
+.introExchange{
+    text-align: center;
+    font-size: 22px;
+    font-weight: lighter;
+    text-transform: capitalize;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.introExchange h1{
+    margin: 40px;
+}
+.introExchange p{
+    margin: 40px;
+}
+
+
+
+
+/*On modifie ses parametre si la page est plus petite que 1245px en largeur*/
+@media (max-width:1245px){
+    #titre-plan {
+        font-size: 60px;
+    }
+    #img-plan {
+        width: 600px;
+        height: auto;
+    }
+    
+}
+
+
+/*On modifie ses parametre si la page est plus petite que 900px en largeur*/
+@media (max-width:900px){
+    .carteKeeper {
+        width: 100%;
+
+    }
+    #titre-plan {
+        font-size: 50px;
+    }
+    .card {
+        width: 115px;
+        height: 152.5px;
+        margin: 0 5vh;
+        border-radius: 20px;
+
+    }
+    #cardImage_01, #cardImage_02{
+        width: 112px;
+        height: 150px;
+    }
+    .head-img{
+        height: 60vh;
+    }
+}
+
+
+/*On modifie ses parametre si la page est plus petite que 800px en largeur*/
+@media (max-width:800px){
+    .loginput {
+        height:30px;
+        width:80%;
+    }
+    .nav-toggler{
+        height: 7em;
+        width: 7em;
+    }
+    .nav-toggler img{
+        height: 5em;
+        width: 5em;
+    }
+    #welcome_p{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .chevr{
+        margin-top: 30px;
+    
+    }
+    .img_def{
+        position: relative;
+        width: 135px;
+        height: 190px;
+        transition: 0.5s;
+    }
+    #slider-span1:target ~ .image-slider #img1,
+    #slider-span1:target ~.image-slider #button-1{
+        width:200px;
+        height: 292.5px;
+        background-color: transparent;
+    }
+    #slider-span2:target ~ .image-slider #img2,
+    #slider-span2:target ~.image-slider #button-2{
+        width:200px;
+        height: 292.5px;
+        background-color: transparent;
+    }
+    #slider-span3:target ~ .image-slider #img3,
+    #slider-span3:target ~.image-slider #button-3{
+        width:200px;
+        height: 292.5px;
+        background-color: transparent;
+    }
+    #slider-span4:target ~ .image-slider #img4,
+    #slider-span4:target ~.image-slider #button-4{
+        width:200px;
+        height: 292.5px;
+        background-color: transparent;
+    }
+    .expoCard img{
+        width: 205px;
+        height: 283.5px;
+        margin : 30px
+    }
+    .expoCard img:hover{
+        box-shadow: none;
+        border-radius: 70px;
+        cursor: pointer;
+    
+    }
+    #exchangeButton {
+        padding: 15px 25px;
+        font-size: 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .intro{
+        margin-bottom: 50px;
+    }
+    .carteKeeper {
+        margin-bottom: 0px;
+        margin-top: 2px;
+        height: 150px;
+    }
+    .carteView {
+        margin-bottom: 0px;
+        margin-top: 2px;
+        height: 150px;
+    }
+    #persDisplay {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    .head-img{
+        height: 40vh;
+        padding-top: 15px;
+    }
+    #titre-plan{
+        font-size: 50px;
+        margin: 25px auto; 
+    }
+    #titre-plan h3{
+        border:3px solid white;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .album p {
+        font-size: 20px;
+    }
+    #img-plan {
+        width: 500px;
+        height: auto;
+    }
+}
+@media (max-width:700px){
+    #titre-plan {
+        font-size: 45px;
+    }
+
+}
+@media (max-width:  650px){
+    #titre-plan {
+        font-size: 30px;
+        margin: 15px auto; 
+    }
+    .album p {
+        font-size: 15px;
+    }
+    #img-plan {
+        width: 200px;
+        height: auto;
+    }
+
+}
+/*On modifie ses parametre si la page est plus petite que 550px en largeur*/
+@media (max-width:550px){
+    .loginput {
+        height:30px;
+        width:90%;
+    }
+    .img_def{
+        position: relative;
+        width: 67.5px;
+        height: 95px;
+        transition: 0.5s;
+    }
+    #slider-span1:target ~ .image-slider #img1,
+    #slider-span1:target ~.image-slider #button-1{
+        width:100px;
+        height: 146px;
+        background-color: transparent;
+    }
+    #slider-span2:target ~ .image-slider #img2,
+    #slider-span2:target ~.image-slider #button-2{
+        width:100px;
+        height: 146px;
+        background-color: transparent;
+    }
+    #slider-span3:target ~ .image-slider #img3,
+    #slider-span3:target ~.image-slider #button-3{
+        width:100px;
+        height: 146px;
+        background-color: transparent;
+    }
+    #slider-span4:target ~ .image-slider #img4,
+    #slider-span4:target ~.image-slider #button-4{
+        width:100px;
+        height: 146px;
+        background-color: transparent;
+    }
+    .expoCard img{
+        width: 102.5px;
+        height: 141.5px;
+        margin : 20px
+    }
+    .expoCard img:hover{
+        box-shadow: none;
+        border-radius: 70px;
+        cursor: pointer;
+    
+    }
+    .card {
+        width: 57.5px;
+        height: 76.25px;
+        margin: 0 5vh;
+
+    }
+    #cardImage_01, #cardImage_02{
+        width: 56px;
+        height: 75px;
+    }
+    #exchangeButton {
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .head-img{
+        height: 30vh;
+        padding-top: 7px;
+        margin-right: 0px;
+    }
+    .titre-plan{
+        font-size: 20px;
+        margin: 25px auto; 
+
+    }
+    .titre-plan h1{
+        border:2px solid white;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .accordeon{
+        border: 3px solid rgba(250, 247, 247, 0.544);
+        width: 80%;
+        max-width: 300px;
+    }
+    .bottom{
+        margin: 40px 0px;
+    }
+    .boutonTrade{
+        font-size: 20px;
+        margin : 0 5px;
+        width: 80%;
+    }
+    .boutonn{
+        font-size: 20px;
+        margin: 0 5px;
+        width: 110%;
+    }
+    .selecteur {
+
+        padding: 5px;
+
+    }
+    .accordeon{
+        margin: 2px auto;
+    }
+    #contenu h3{
+        font-size: 15px;
+    }
+    
+    
+}
+@media (max-width:450px){
+    #titre-plan {
+        font-size: 20px;
+    }
+    #img-plan {
+        width: 150px;
+        height: auto;
+    }
+    
+}
+@media (max-width:375px){
+    #titre-plan {
+        font-size: 14px;
+        margin: 10px auto; 
+    }
+    #titre-plan h3{
+        border:3px solid white;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .album p{
+        font-weight :600;
+        font-size: 12px;
+    }
+    .head-img{
+        height: 20vh;
+    }
+    #contenu h3{
+        font-size: 10px;
+    }
+    
+}
+

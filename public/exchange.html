@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Trade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Harry Potter Trade</h1>
+        <h2>Give life to your favorite show</h2>
+    </header>
+
+    <!--Menu Navigation-->
+    
+    <nav>
+        <ul>
+            <li><a href="profile.html">
+                <img src="img/user.png" alt="user">
+                <span class="nav-item">Profil</span>
+            </a></li>
+  
+            <li><a href="index.html">
+                <img src="img/home.png" alt="home">
+                <span class="nav-item">Home</span>
+            </a></li>
+  
+            <li><a href="cards.html">
+                <img src="img/game.png" alt="cards">
+                <span class="nav-item">Cards</span>
+            </a></li>
+  
+            <li><a href="exchange.html">
+                <img src="img/exchange-alt.png" alt="exchanges">
+                <span class="nav-item">Trade</span>
+            </a></li> 
+            <li><a href="#">
+                <img src="img/sign-out-alt.png" alt="Logout">
+                <span class="nav-item">Log out</span>
+            </a></li>
+        </ul>
+      </nav>
+
+      <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
+          <img src="img/logo.png" alt="Logo">
+      </button>
+
+      <!--Tete de page-->
+
+    <main id="main-trade">
+        <div class="introExchange">
+            <h1>Trade your cards with people from all around the world</h1>
+            <p>- Select the card you wish to trade from your collection. Whether it's a rare creature or a powerful spell, the choice is yours.
+                <br>
+                - Next, choose with whom you'd like to trade. Browse through fellow enthusiasts' collections and find the perfect match for your exchange.
+                <br>
+                - Once you've found your trading partner, select the card from their collection that you desire in return for your own.
+                <br>
+                <br>
+                With just a few simple steps, you'll be engaging in magical exchanges that bring joy and excitement to your Harry Potter collection. Happy trading!
+            </p>
+        </div>
+
+
+        <!--On creer les cadres ou seront les cartes-->
+
+        <div class="carteKeeper" id="carteView">
+            <div class="card" id="card1" onclick="selectCard(1)">
+                <img src="" alt="" id="cardImage_01">
+            </div>
+            <button id="exchangeButton" onclick="exchangeCards()" disabled>Échanger</button>
+            <div class="card" id="card2" onclick="selectCard(2)">
+                <img src="" alt="" id="cardImage_02">
+            </div>
+        </div>
+
+        <h2 id="tradeText">Your're trading with :</h2>
+        <div id="persDisplay"></div>
+        
+        <!--Selectionneur de carte 01-->
+        <div class="carteKeeper" id="carteChoix">
+            <div class="selecteur">
+                <span>Select a card</span>
+                <div class="selecteur-content">
+                    <a onclick="showImage_01('image1')">Dumbledore</a>
+                    <a onclick="showImage_01('image2')">Hagrid</a>
+                    <a onclick="showImage_01('image3')">Voldemort</a>
+                    <a onclick="showImage_01('image4')">Harry Potter</a>
+                    <a onclick="showImage_01('image5')">Ron Weasley</a>
+                    <a onclick="showImage_01('image6')">Hermione Granger</a>
+                </div>
+            </div>
+             <!--Selectionneur de personne avec qui echanger-->
+            <div class="selecteur" id="personne">
+                <select id="selectPers">
+                    <option value="John">John</option>
+                    <option value="Alice">Alice</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Eva">Eva</option>
+                </select>
+            </div>
+             <!--Selectionneur de carte 02-->
+            <div class="selecteur">
+                <span>Select a card</span>
+                <div class="selecteur-content">
+                    <a onclick="showImage_02('image1')">Dumbledore</a>
+                    <a onclick="showImage_02('image2')">Hagrid</a>
+                    <a onclick="showImage_02('image3')">Voldemort</a>
+                    <a onclick="showImage_02('image4')">Harry Potter</a>
+                    <a onclick="showImage_02('image5')">Ron Weasley</a>
+                    <a onclick="showImage_02('image6')">Hermione Granger</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <h2>Contact</h2>
+        <ul>
+            <li>
+                <img src="img/envelope.png" alt="Email">
+                <span class="nav-footer">harry.potter@gmail.com</span>
+            </li>
+            <li>
+                <img src="img/phone-call.png" alt="Phone">
+                <span class="nav-footer">+33 01 01 01 01 01</span>
+            </li>
+            <li>
+                <img src="img/home.png" alt="Adresse">
+                <span class="nav-footer">108 rue de vaugirard 75006 Paris</span>
+            </li>
+        </ul>
+    </footer>
+    <script src="JV/script_exchange.js"></script>
+</body>
+</html>

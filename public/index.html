@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Trade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Harry Potter Trade</h1>
+        <h2>Give life to your favorite show</h2>
+    </header>
+
+    <!--Menu Navigation-->
+
+    <nav>
+        <ul>
+            <li><a href="profile.html">
+                <img src="img/user.png" alt="user">
+                <span class="nav-item">Profil</span>
+            </a></li>
+  
+            <li><a href="index.html">
+                <img src="img/home.png" alt="home">
+                <span class="nav-item">Home</span>
+            </a></li>
+  
+            <li><a href="cards.html">
+                <img src="img/game.png" alt="cards">
+                <span class="nav-item">Cards</span>
+            </a></li>
+  
+            <li><a href="exchange.html">
+                <img src="img/exchange-alt.png" alt="exchanges">
+                <span class="nav-item">Trade</span>
+            </a></li> 
+            <li><a href="#">
+                <img src="img/sign-out-alt.png" alt="Logout">
+                <span class="nav-item">Log out</span>
+            </a></li>
+        </ul>
+      </nav>
+
+      <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
+          <img src="img/logo.png" alt="Logo">
+      </button>
+
+
+
+<!--Tete de page-->
+
+
+    <h1 class="h1-index" id="welcome">Welcome on Harry Potter Trade</h1>
+    <p id="welcome_p">
+        Welcome to Harry Potter Trade!<br>
+        Step into the magical world of card trading where witches, wizards, and 
+        enchantments await. Whether you're a seasoned collector or just starting your 
+        journey, Harry Potter Trade is your portal to exchange and discover coveted 
+        cards from across the wizarding realm.Unleash the power of friendship, strategy,
+        and of course, a bit of wizardry as you connect with fellow enthusiasts to 
+        complete your collection.<br>From rare creatures to legendary spells, the 
+        possibilities are endless.<br> Join us in celebrating the spirit of camaraderie 
+        and the enchantment of the Harry Potter universe. Let the trading begin!
+    </p>
+
+    <!--Carte Clicker-->
+
+    <h1 class="h1-index">Tradings cards</h1>
+    <div class="chevr">
+        <img src="img/chevronGauche.png" alt="Suivant">
+        <img src="img/chevronDroite.png" alt="Suivant">
+    </div>
+    <main class="main-index">
+        <div class="slide-container">
+            <!--Carte une fois cliqué-->
+            <span class="slider-span" id="slider-span1"></span>
+            <span class="slider-span" id="slider-span2"></span>
+            <span class="slider-span" id="slider-span3"></span>
+            <span class="slider-span" id="slider-span4"></span>
+            <div class="image-slider">
+                <!--Image du slider-->
+                <div class="slides-div" id="slide-1">
+                    <img src="img/dumbledore.png" alt="" class="img_def" id="img1">
+                    <a href="#slider-span1" class="button" id="button-1"></a>
+                    <a href="dumbledore.html" class="lien">
+                        <div class="lien-carte"><p>Click for more</p></div>
+                    </a>
+                </div>
+                <div class="slides-div" id="slide-2">
+                    <img src="img/Harry_Potter_Card.png" alt="" class="img_def" id="img2">
+                    <a href="#slider-span2" class="button" id="button-2"></a>
+                    <a href="harry.html" class="lien">
+                        <div class="lien-carte"><p>Click for more</p></div>
+                    </a>
+                </div>
+                <div class="slides-div" id="slide-3">
+                    <img src="img/Hermione granger.png" alt="" class="img_def" id="img3">
+                    <a href="#slider-span3" class="button" id="button-3"></a>
+                    <a href="hermione.html" class="lien">
+                        <div class="lien-carte"><p>Click for more</p></div>
+                    </a>
+                </div>
+                <div class="slides-div" id="slide-4">
+                    <img src="img/hagrid.png" alt="" class="img_def" id="img4">
+                    <a href="#slider-span4" class="button" id="button-4"></a>
+                    <a href="hagrid.html" class="lien">
+                        <div class="lien-carte"><p>Click for more</p></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <h2>Contact</h2>
+        <ul>
+            <li>
+                <img src="img/envelope.png" alt="Email">
+                <span class="nav-footer">harry.potter@gmail.com</span>
+            </li>
+            <li>
+                <img src="img/phone-call.png" alt="Phone">
+                <span class="nav-footer">+33 01 01 01 01 01</span>
+            </li>
+            <li>
+                <img src="img/home.png" alt="Adress">
+                <span class="nav-footer">108 rue de vaugirard 75006 Paris</span>
+            </li>
+        </ul>
+    </footer>
+
+    <script></script>
+    <script src="JV/script_index.js"></script>
+</body>
+</html>
